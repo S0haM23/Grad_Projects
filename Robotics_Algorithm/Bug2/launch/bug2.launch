@@ -1,0 +1,8 @@
+<launch>
+	<node name="stage" pkg="stage_ros" type="stageros"
+	      args="$(find lab2)/world/playground.world" />
+    <node name="bug2" pkg="lab2" type="wall.py"/>
+	
+	<node name="ransac" pkg="lab2" type="ransac.py"/>
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find lab2)/launch/ransac.rviz" output="screen"/>
+</launch>
